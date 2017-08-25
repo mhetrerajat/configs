@@ -1,0 +1,18 @@
+;; Object example/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "example/"
+  :tables (list 
+   (semanticdb-table "DBController.java"
+    :major-mode 'java-mode
+    :tags nil
+    :file "DBController.java"
+    :pointmax 3426
+    :fsize 3547
+    :lastmodtime '(21555 49770 0 0)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!Users!rajatmhetre!Desktop!SQLiteMySQLSync!Android!SQLiteMySQLSync!src!com!prgguru!example!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )
