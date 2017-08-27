@@ -76,7 +76,13 @@
 (load-theme 'material t) ;; load material theme
 (global-linum-mode t) ;; enable line numbers globally
 
-;; init.el ends here
+
+;; Go syntax highlighting
+(add-to-list 'load-path "plugins/go-mode")
+(require 'go-mode)
+(add-hook 'before-save-hook 'gofmt-before-save)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
