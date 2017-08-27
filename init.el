@@ -96,7 +96,8 @@
     flycheck
     material-theme
     py-autopep8
-    go-mode))
+    go-mode
+    git-gutter))
 
 (mapc #'(lambda (package)
     (unless (package-installed-p package)
@@ -132,9 +133,8 @@
        ))
 
 
-;; git gutter mode
-(add-to-list 'load-path "plugins/git-gutter")
-(load "git-gutter.el")
+;; git-gutter mode
+(require 'git-gutter)
 
 ;; If you enable global minor mode
 (global-git-gutter-mode t)
