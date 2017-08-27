@@ -94,6 +94,12 @@
 (load "nyan-mode.el")
 (nyan-mode 1)
 (nyan-start-animation)
+;; Custom modeline for nyan mode
+(setq mode-line-format
+      (list
+       '(:eval (list (nyan-create)))
+       ))
+
 
 ;; git gutter mode
 (add-to-list 'load-path "plugins/git-gutter")
@@ -119,6 +125,13 @@
 (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 
 
+;; To beautify JSON
+(defun json-format ()
+  (interactive)
+  (save-excursion
+    (shell-command-on-region (point-min) (point-max) "python -m json.tool" (buffer-name) t)
+    )
+  )
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
