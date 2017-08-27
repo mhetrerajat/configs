@@ -29,6 +29,18 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 
+;; Settings for enforcing to use UNIX endlines
+(set-default-coding-systems 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
+(set-default default-buffer-file-coding-system 'utf-8-unix)
+
+
+;; Setting keybindings for scroll line by line.
+(global-set-key (kbd "C-M-j") 'scroll-up-line)
+(global-set-key (kbd "C-M-k") 'scroll-down-line)
+
+
+
 ;; INSTALL PACKAGES
 ;; --------------------------------------
 
