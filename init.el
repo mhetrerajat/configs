@@ -3,6 +3,9 @@
 ;; Disable splash screen
 (setq inhibit-startup-message t)
 
+;; Set font size
+(set-default-font "Menlo 15")
+
 ;; Disabling bold fonts
 (set-face-bold-p 'bold nil)
 
