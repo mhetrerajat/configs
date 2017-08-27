@@ -38,33 +38,6 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 
-;; GUI specific settings
-;; Load the customizations after an emacsclient startsup.
-(defun disable-crappy-frames (&optional frame)
-  "Disables scrollbars, toolbars and fringe while in graphical mode."
-  (when (or window-system frame)
-    ;; Highlighting current line
-    (global-hl-line-mode 1)
-
-    (set-face-italic-p 'italic nil)
-
-    ;; Disabling the fringe
-    (set-fringe-mode '(0 . 0))
-
-    ;; Disable the scrollbar
-    (scroll-bar-mode -1)
-
-    ;; Setting the default font
-    (set-default-font "Liberation Mono 12")
-    ;;(add-to-list 'default-frame-alist '(font . "Source Code Pro-14"))
-    ;;(set-face-attribute 'default nil :height 150)
-    ;;(set-face-attribute 'default nil :font "Liberation Mono 9")
-
-    ;; Disable the toolbar
-    (tool-bar-mode -1)))
-
-(disable-crappy-frames)
-
 ;; Settings for enforcing to use UNIX endlines
 (set-default-coding-systems 'utf-8-unix)
 (prefer-coding-system 'utf-8-unix)
