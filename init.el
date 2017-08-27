@@ -59,7 +59,8 @@
     elpy
     flycheck
     material-theme
-    py-autopep8))
+    py-autopep8
+    go-mode))
 
 (mapc #'(lambda (package)
     (unless (package-installed-p package)
@@ -78,7 +79,6 @@
 
 
 ;; Go syntax highlighting
-(add-to-list 'load-path "plugins/go-mode")
 (require 'go-mode)
 (add-hook 'before-save-hook 'gofmt-before-save)
 
