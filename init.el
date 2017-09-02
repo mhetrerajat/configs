@@ -1,4 +1,4 @@
-;; init.el --- Emacs configuration
+;;; init.el --- Emacs configuration
 
 ;; Disable splash screen
 (setq inhibit-startup-message t)
@@ -22,16 +22,15 @@
 
 ;; replace tabs with 4 space
 (setq-default indent-tabs-mode nil)
-(add-hook 'after-change-major-mode-hook 
-          '(lambda () 
+(add-hook 'after-change-major-mode-hook
+          '(lambda ()
              (setq-default indent-tabs-mode nil)
              (setq c-basic-indent 4)
              (setq tab-width 4)))
 
 
 ;; Set C style to linux
-(setq c-default-style "linux"
-      c-basic-offset 4)
+(setq c-default-style "linux"  c-basic-offset 4)
 
 
 ;; Disable the gaudy colors in shell
@@ -100,7 +99,11 @@
     material-theme
     py-autopep8
     go-mode
-    git-gutter))
+    git-gutter
+    web-mode
+    js2-mode
+    json-mode
+    exec-path-from-shell))
 
 (mapc #'(lambda (package)
     (unless (package-installed-p package)
