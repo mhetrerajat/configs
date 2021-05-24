@@ -1,2 +1,3 @@
-# emacs.d
-Emacs configuration
+# Configs
+
+Personalised local development configs
