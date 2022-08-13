@@ -76,12 +76,7 @@ plugins=(
 	brew
 	docker
 	docker-compose
-	django
 	httpie
-	pyenv
-	pylint
-	python
-	poetry
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -120,10 +115,10 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 # Python virtualenv wrapper dir
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+#export WORKON_HOME=~/.virtualenvs
+#source /usr/local/bin/virtualenvwrapper.sh
+#export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
 # Android Studio
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -168,24 +163,31 @@ export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
-# Starship
-# eval "$(starship init zsh)"
-
 # Brew Python 3 : System Default
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
+#export PATH=/usr/local/opt/python/libexec/bin:$PATH
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 export PATH="/usr/local/opt/ant@1.9/bin:$PATH"
+
+# Mono
+export MONO_GAC_PREFIX="/usr/local"
+
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+# Starship
+eval "$(starship init zsh)"
+
+# Github Commit GPG
+export GPG_TTY=$(tty)
+
+# JAVA HOME
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 
-# Mono
-export MONO_GAC_PREFIX="/usr/local"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+# Aliases
+alias z=zellij
