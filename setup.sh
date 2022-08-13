@@ -70,3 +70,9 @@ cargo install ruget
 brewIn exa
 brewIn procs
 brewIn ripgrep
+brewIn starship
+
+# TUI Customizations
+if ! [ -x "$(command -v omz)" ]; then
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
