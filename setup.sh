@@ -47,6 +47,9 @@ brewCaskIn() {
 brewCaskIn "Firefox" firefox
 brewCaskIn "Visual Studio Code" visual-studio-code
 
+# Core Utils
+brewIn openssl@3
+
 # Shell / Terminal Configs
 brewIn zsh
 brewIn neovim
@@ -76,3 +79,6 @@ brewIn starship
 if ! [ -x "$(command -v omz)" ]; then
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+
+# Frameworks
+brewIn apache-spark
