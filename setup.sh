@@ -84,6 +84,8 @@ brewIn starship
 
 # Java / Scala
 brewIn openjdk@17
+brewIn scala
+brewIn sbt
 
 # Databases
 brewIn mysql@8.0
