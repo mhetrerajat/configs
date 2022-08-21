@@ -46,6 +46,9 @@ brewCaskIn() {
 # Apps
 brewCaskIn "Firefox" firefox
 brewCaskIn "Visual Studio Code" visual-studio-code
+brewCaskIn "Dropbox" dropbox
+brewCaskIn "Tor Browser" tor-browser
+brewCaskIn "Outlook" microsoft-outlook
 
 # Core Utils
 brewIn openssl@3
@@ -61,6 +64,10 @@ brewIn gnupg2
 # Python
 brewIn pyenv
 brewIn pyenv-virtualenv
+pyenv install 3.10.6
+pyenv global 3.10.6
+pip install --upgrade pip
+pip install ipython
 
 # Rust
 if ! [ -x "$(command -v rustc)" ]; then
@@ -75,9 +82,22 @@ brewIn procs
 brewIn ripgrep
 brewIn starship
 
+# Java / Scala
+brewIn openjdk@17
+
+# Databases
+brewIn mysql@8.0
+brewIn postgresql@14
+
 # TUI Customizations
 if ! [ -x "$(command -v omz)" ]; then
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+read -p "Do you want to replace ~/.zshrc config [N/y]? " -n 1 -r
+echo # (optional) move to a new line
+if [[ $REPLY =~ ^[y]$ ]]; then
+	curl https://raw.githubusercontent.com/mhetrerajat/configs/master/oh_my_zsh/.zshrc --output ~/.zshrc
 fi
 
 # Frameworks
