@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nvim ~/.zshrc"
+alias zshconfig="hx ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
@@ -191,3 +191,15 @@ eval "$(pyenv virtualenv-init -)"
 
 # Aliases
 alias z=zellij
+export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
+export CPPFLAGS="-I/usr/local/opt/openjdk@17/include"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+PATH="/Users/rajatmhetre/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/rajatmhetre/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/rajatmhetre/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/rajatmhetre/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/rajatmhetre/perl5"; export PERL_MM_OPT;
