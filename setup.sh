@@ -104,3 +104,7 @@ fi
 
 # Frameworks
 brewIn apache-spark
+
+
+# Helix Editor Configs
+cp -r helix ~/.config/
