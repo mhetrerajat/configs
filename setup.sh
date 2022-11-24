@@ -55,7 +55,8 @@ brewIn openssl@3
 
 # Shell / Terminal Configs
 brewIn zsh
-brewIn neovim
+brewIn helix
+brewIn just
 
 # Github Commit Signature Dependencies
 brewIn gnupg
