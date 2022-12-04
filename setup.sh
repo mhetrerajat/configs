@@ -49,6 +49,7 @@ brewCaskIn "Visual Studio Code" visual-studio-code
 brewCaskIn "Dropbox" dropbox
 brewCaskIn "Tor Browser" tor-browser
 brewCaskIn "Outlook" microsoft-outlook
+brewCaskIn "Alacritty" alacritty
 
 # Core Utils
 brewIn openssl@3
@@ -106,6 +107,12 @@ fi
 # Frameworks
 brewIn apache-spark
 
-
 # Helix Editor Configs
 cp -r helix ~/.config/
+
+brew install helix
+brew install --cask spotify
+brew install --cask discord
+
+# Node Js
+brewIn node
