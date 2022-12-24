@@ -50,6 +50,7 @@ brewCaskIn "Dropbox" dropbox
 brewCaskIn "Tor Browser" tor-browser
 brewCaskIn "Outlook" microsoft-outlook
 brewCaskIn "Alacritty" alacritty
+brewCaskIn "VLC" vlc
 
 # Core Utils
 brewIn openssl@3
