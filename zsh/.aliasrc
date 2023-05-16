@@ -12,6 +12,12 @@ alias z=zellij
 # SSH
 alias ssh="TERM=xterm-256color $(which ssh)"
 
+# Sync local dotfiles / configurations with dotfiles repository
+DOTFILES_REPO_LOCAL_LOCATION="~/Desktop/Work/configs"
+# NeoVim
+alias nvgitsync="rsync -av --exclude='*.json*' ~/.config/nvim/ $DOTFILES_REPO_LOCAL_LOCATION/.config/nvim/"
+# Zsh
+alias zshgitsync="rsync -av --include='.zshrc' --include='.aliasrc' --include='.zshenv' --include='.zfuncs' --exclude='*' ~/ $DOTFILES_REPO_LOCAL_LOCATION/zsh/"
 
 
 

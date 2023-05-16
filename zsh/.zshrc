@@ -37,15 +37,17 @@ fi
 
 
 # Python & Pyenv
-znap function _pyenv pyenv 'eval "$( pyenv init - --path --no-rehash )"'
-compctl -K    _pyenv pyenv
-
-znap function _pyvenv pyvenv 'eval "$(pyenv virtualenv-init -)"'
-compctl -K    _pyvenv pyvenv
+znap eval pyenv "pyenv init - --path --no-rehash"
+znap eval pyvenv "pyenv virtualenv-init -"
             
-znap function _pip_completion pip       'eval "$( pip completion --zsh )"'
-compctl -K    _pip_completion pip
-
 # Load custom functions
-fpath+=~/.zfunc
+# TODO: Fix the autoload
+# fpath+=~/.zfunc
 
+# Third party autocompletions
+znap fpath _pip	'pip completion --zsh'
+znap fpath _rustup  'rustup  completions zsh'
+znap fpath _cargo   'rustup  completions zsh cargo'
+
+# Autojump CLI
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
