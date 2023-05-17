@@ -48,6 +48,13 @@ znap eval pyvenv "pyenv virtualenv-init -"
 znap fpath _pip	'pip completion --zsh'
 znap fpath _rustup  'rustup  completions zsh'
 znap fpath _cargo   'rustup  completions zsh cargo'
+znap fpath _fnm 'fnm completions --shell zsh'
+
+# FNM - Fast Node Manager
+znap eval fnm "fnm env --use-on-cd --version-file-strategy=recursive"
 
 # Autojump CLI
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# fzf autocompletion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

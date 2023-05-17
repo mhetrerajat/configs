@@ -3,8 +3,15 @@ return {
 	'nvim-treesitter/nvim-treesitter',
 	dependencies = {
 		'nvim-treesitter/nvim-treesitter-textobjects',
+		{
+			'NvChad/nvim-colorizer.lua',
+			config = function()
+				require("colorizer").setup {}
+			end
+		}
 	},
-	lazy = false,
+	lazy = true,
+	event = { "CursorHold", "CursorHoldI" },
 	build = ":TSUpdate",
 	config = function()
 		require('nvim-treesitter.configs').setup {

@@ -21,7 +21,7 @@ require('configs')
 
 local plugins = {
 	-- Shows pending keybinds.
-	{ 'folke/which-key.nvim', opts = {} },
+	{ 'folke/which-key.nvim', opts = {}, lazy = true, event = { "CursorHold", "CursorHoldI" }, },
 	{ import = 'plugins' },
 }
 local opts = {}

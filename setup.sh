@@ -64,6 +64,24 @@ brewIn just
 brewIn gnupg
 brewIn gnupg2
 
+
+## tmux
+# Install tmux plugin manager
+TMUX_DIR="$HOME/.config/tmux"
+TPM_DIR="$TMUX_DIR/plugins/tpm"
+if [ ! -d $TPM_DIR ]; then
+	echo "Installing tnpm"
+	git clone https://github.com/tmux-plugins/tpm $TPM_DIR
+else
+  echo "tmux plugin manager is already installed"
+fi
+
+## fzf
+brew install fzf
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
+
+
 # Python
 brewIn pyenv
 brewIn pyenv-virtualenv
