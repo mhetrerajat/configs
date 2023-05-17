@@ -1,3 +1,6 @@
+# Term
+export TERM=xterm-256color
+
 . "$HOME/.cargo/env"
 
 # System level binaries
