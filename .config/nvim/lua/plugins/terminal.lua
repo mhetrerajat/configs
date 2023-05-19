@@ -2,6 +2,12 @@
 return {
 	'akinsho/toggleterm.nvim',
 	version = "*",
-	config = true,
-	lazy = true,
+	-- lazy = true,
+	config = function()
+		require("toggleterm").setup {
+			shell = vim.o.shell, -- change the default shell
+			persist_size = true,
+			size = 15
+		}
+	end
 }

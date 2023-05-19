@@ -1,8 +1,18 @@
 return {
+	-- Mason
+	{
+		"williamboman/mason.nvim",
+		lazy = false,
+		build = ":MasonUpdate",
+		config = function()
+		end,
+	},
+
 
 	-- LSP
 	{
 		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			-- Automatically install LSPs to stdpath for neovim
 			{ 'williamboman/mason.nvim', config = true, build = ":MasonUpdate" },
@@ -64,13 +74,12 @@ return {
 				-- clangd = {},
 				-- gopls = {},
 				pyright = {
-					settings = {
-						python = {
-							analysis = {
-								autoSearchPaths = true,
-								diagnosticMode = "workspace",
-								useLibraryCodeForTypes = true
-							},
+					python = {
+						analysis = {
+							autoSearchPaths = true,
+							diagnosticMode = "workspace",
+							useLibraryCodeForTypes = true,
+							typeCheckingMode = "off",
 						},
 					},
 				},
@@ -82,6 +91,9 @@ return {
 						telemetry = { enable = false },
 					},
 				},
+				jsonls = {},
+				yamlls = {},
+				taplo = {}
 			}
 
 			-- Setup neovim lua configuration
@@ -177,6 +189,46 @@ return {
 			--
 		end,
 	},
+
+
+	-- formatting
+	--[[ {
+		"jose-elias-alvarez/null-ls.nvim",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+		},
+		lazy = true,
+		config = function()
+			local null_ls = require("null-ls")
+
+			null_ls.setup({
+				border = "rounded",
+				update_in_insert = vim.diagnostic.config().update_in_insert,
+				sources = {
+
+					-- diagnostics
+					null_ls.builtins.diagnostics.yamllint,
+					null_ls.builtins.diagnostics.zsh,
+
+					-- linters
+					null_ls.builtins.formatting.ruff,
+
+					-- formatting
+					null_ls.builtins.formatting.prettierd,
+					null_ls.builtins.formatting.rustfmt,
+					null_ls.builtins.formatting.black,
+					null_ls.builtins.formatting.isort,
+					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.formatting.shfmt,
+					null_ls.builtins.formatting.sqlfluff.with({
+						extra_args = { "--dialect", "postgres" },
+					}),
+					null_ls.builtins.formatting.taplo
+
+				},
+			})
+		end
+	} ]]
 
 
 

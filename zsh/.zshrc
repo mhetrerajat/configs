@@ -6,6 +6,9 @@
 source ~/znaprepo/znap/znap.zsh  # Start Znap
 zstyle ':znap:*' repos-dir ~/znaprepo/
 
+# Enable Asynchronous compilation
+# compiles scripts and functions in the background
+zstyle ':znap:*' auto-compile no
 
 # Theme / Prompt
 # Starship
@@ -31,6 +34,9 @@ znap source ael-code/zsh-colored-man-pages
 if [[ -r ~/.aliasrc ]]; then
     . ~/.aliasrc
 fi
+
+# Git Autocomplete
+# znap source git/git 'contrib/completion/git-completion.zsh'
 
 # Java/Scala Package Manager
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -58,3 +64,6 @@ znap eval fnm "fnm env --use-on-cd --version-file-strategy=recursive"
 
 # fzf autocompletion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# direnv
+znap eval _direnv "direnv hook zsh"

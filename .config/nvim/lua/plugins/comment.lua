@@ -1,5 +1,5 @@
 return {
-	-- comment neovim plugin
+	-- comment neovim plugins
 	'numToStr/Comment.nvim',
 	lazy = true,
 	event = { "CursorHold", "CursorHoldI" },

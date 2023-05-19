@@ -1,3 +1,7 @@
+-- Set python path for neovim
+vim.g.python_host_prog = '~/.pyenv/versions/nvimvenv/bin/python'
+vim.g.python3_host_prog = '~/.pyenv/versions/nvimvenv/bin/python'
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
