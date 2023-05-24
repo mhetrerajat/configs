@@ -27,7 +27,7 @@ return {
 	lazy = true,
 	event = "VeryLazy",
 	keys = {
-		{ "<leader>p", "<cmd>Legendary<cr>", desc = "Open Legendary Command Palette" },
+		{ "<leader>pp", "<cmd>Legendary<cr>", desc = "Open Legendary Command Palette" },
 	},
 	dependencies = {
 		{ "stevearc/dressing.nvim" }

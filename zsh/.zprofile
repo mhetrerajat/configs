@@ -44,6 +44,13 @@ syncdot() {
 		$HOME/.config/tmux/ \
 		$DOTFILES_REPO_LOCAL_LOCATION/.config/tmux/
 
+	# helix editor
+	rsync \
+		-av \
+		--include='*'
+	  --exclude='runtime' \
+		$HOME/.config/helix/ \
+		$DOTFILES_REPO_LOCAL_LOCATION/.config/helix/
 }
 
 # Docker cleanup

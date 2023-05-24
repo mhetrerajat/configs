@@ -1,25 +1,26 @@
-theme = "dark_plus"
+theme = "base16_default_dark"
 
 [editor]
-line-number = "absolute"
-mouse = true
-cursorline = true
-color-modes = true
-
-[editor.statusline]
-left = ["mode", "spinner"]
-center = ["file-name"]
-right =  ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
-separator = "|"
-
-[editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "underline"
+line-number = "relative"
 
 [editor.file-picker]
 hidden = false
 
 [editor.indent-guides]
 render = true
+character = "┆"
+skip-levels = 1
 
+[editor.statusline]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"

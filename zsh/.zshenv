@@ -59,6 +59,8 @@ export EDITOR=nvim
 # fzf
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
+# Helix Editor
+export HELIX_RUNTIME=$HOME/.config/helix/runtime
 
 
 
