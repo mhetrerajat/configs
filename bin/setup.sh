@@ -14,11 +14,11 @@ info() { echo ​"${YELLOW}${@}${RESET}"; }
 success() { echo ​"${GREEN}${@}${RESET}"; }
 error() { echo ​"${RED}${@}${RESET}" >&2; }
 
-info "Setting up device..."
+echo "Setting up device..."
 
 # Install homebrew
 if ! [ -x "$(command -v brew)" ]; then
-    info "Installing homebrew"
+    echo "Installing homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     if [ $? -eq 0 ]; then
         success "Homebrew installation completed successfully."
@@ -27,7 +27,7 @@ if ! [ -x "$(command -v brew)" ]; then
         exit 1
     fi
 else
-    success "Homebrew is already installed."
+    info "Homebrew is already installed."
 fi
 
 # Brew Packages
@@ -35,3 +35,24 @@ declare -a brewpkgs=(
     helix # editor
     shfmt # formatter for bash scripts
 )
+
+info "Updating package list"
+brew update
+
+# Installing packages if they are not already installed
+for pkg in ${brewpkgs[@]}; do
+    echo "Checking ${pkg}"
+    if brew list $pkg >/dev/null; then
+        info "${pkg} is already installed"
+    else
+        brew install $pkg
+    fi
+
+    result=$?
+    if [ $result -ne 0 ]; then
+        error "Error: failed to install ${pkg}"
+        exit 1
+    else
+        success "Installed ${pkg}"
+    fi
+done
