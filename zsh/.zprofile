@@ -2,55 +2,55 @@
 
 # Sync dotfiles with Git Repo
 syncdot() {
-	# Sync local dotfiles / configurations with dotfiles repository
-	DOTFILES_REPO_LOCAL_LOCATION="$HOME/Desktop/Work/configs"
-	# NeoVim
-	rsync \
-		-av \
-		--exclude='*.json*' \
-		$HOME/.config/nvim/ \
-		$DOTFILES_REPO_LOCAL_LOCATION/.config/nvim/
-	# Zsh
-	rsync \
-		-av \
-		--include='.zshrc' \
-		--include='.aliasrc' \
-		--include='.zshenv' \
-		--include='.zprofile' \
-		--exclude='*' \
-		$HOME/ \
-		$DOTFILES_REPO_LOCAL_LOCATION/zsh/
+    # Sync local dotfiles / configurations with dotfiles repository
+    DOTFILES_REPO_LOCAL_LOCATION="$HOME/Desktop/Work/configs"
+    # NeoVim
+    rsync \
+        -av \
+        --exclude='*.json*' \
+        $HOME/.config/nvim/ \
+        $DOTFILES_REPO_LOCAL_LOCATION/.config/nvim/
+    # Zsh
+    rsync \
+        -av \
+        --include='.zshrc' \
+        --include='.aliasrc' \
+        --include='.zshenv' \
+        --include='.zprofile' \
+        --exclude='*' \
+        $HOME/ \
+        $DOTFILES_REPO_LOCAL_LOCATION/zsh/
 
-	# starship
-	rsync \
-		-av \
-		--include='starship.toml' \
-		--exclude='*' \
-		$HOME/.config/ \
-		$DOTFILES_REPO_LOCAL_LOCATION/.config/
-	
-	# alacritty	
-	rsync \
-		-av \
-		--include='*' \
-		$HOME/.config/alacritty/ \
-		$DOTFILES_REPO_LOCAL_LOCATION/.config/alacritty/
+    # starship
+    rsync \
+        -av \
+        --include='starship.toml' \
+        --exclude='*' \
+        $HOME/.config/ \
+        $DOTFILES_REPO_LOCAL_LOCATION/.config/
 
-	# tmux
-	rsync \
-		-av \
-		--include='tmux.conf' \
-		--exclude='*' \
-		$HOME/.config/tmux/ \
-		$DOTFILES_REPO_LOCAL_LOCATION/.config/tmux/
+    # alacritty
+    rsync \
+        -av \
+        --include='*' \
+        $HOME/.config/alacritty/ \
+        $DOTFILES_REPO_LOCAL_LOCATION/.config/alacritty/
 
-	# helix editor
-	rsync \
-		-av \
-		--include='*'
-	  --exclude='runtime' \
-		$HOME/.config/helix/ \
-		$DOTFILES_REPO_LOCAL_LOCATION/.config/helix/
+    # tmux
+    rsync \
+        -av \
+        --include='tmux.conf' \
+        --exclude='*' \
+        $HOME/.config/tmux/ \
+        $DOTFILES_REPO_LOCAL_LOCATION/.config/tmux/
+
+    # helix editor
+    rsync \
+        -av \
+        --include='*' \
+        --exclude='runtime/' \
+        $HOME/.config/helix/ \
+        $DOTFILES_REPO_LOCAL_LOCATION/.config/helix/
 }
 
 # Docker cleanup
@@ -67,4 +67,5 @@ armaggedon() {
     docker rmi -f $(docker images -qa)
 }
 
-
+# Created by `pipx` on 2023-05-24 06:03:39
+export PATH="$PATH:/Users/mhetrerajat/.local/bin"

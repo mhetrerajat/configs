@@ -67,3 +67,9 @@ znap eval fnm "fnm env --use-on-cd --version-file-strategy=recursive"
 
 # direnv
 znap eval _direnv "direnv hook zsh"
+
+# fnm
+znap eval _fnm "fnm env --use-on-cd"
+
+# Created by `pipx` on 2023-05-24 06:03:39
+export PATH="$PATH:/Users/mhetrerajat/.local/bin"

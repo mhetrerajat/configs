@@ -54,7 +54,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 #  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Default Editor
-export EDITOR=nvim
+export EDITOR=hx
 
 # fzf
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
@@ -62,5 +62,7 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 # Helix Editor
 export HELIX_RUNTIME=$HOME/.config/helix/runtime
 
-
-
+# History Management
+export HISTCONTROL=ignoreboth
+export HISTSIZE=5000
+export HISTIGNORE="clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll"
