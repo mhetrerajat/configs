@@ -10,6 +10,24 @@ TERM = "xterm-256color"
 [font]
 size = 18.0
 
+
+[selection]
+save_to_clipboard = true
+
+[window]
+decorations = "none"
+startup_mode = "Maximized"
+padding = { x = 10, y = 10 }
+
 [scrolling]
 history = 10000
 multiplier = 3
+
+
+[colors]
+draw_bold_text_with_bright_colors = true
+transparent_background_colors = true
+
+
+[terminal]
+osc52 = "CopyPaste"
